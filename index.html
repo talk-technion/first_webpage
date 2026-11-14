@@ -3,16 +3,220 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A simple, responsive Hello World website.">
-    <meta name="theme-color" content="#f5f7fb">
-    <title>Hello, world!</title>
+    <meta name="description" content="A Mongol-inspired steppe hall for Sudoku and a four-player game of Whist.">
+    <meta name="theme-color" content="#172b28">
+    <title>The Steppe Hall — Games &amp; Tall Tales</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <script src="sudoku.js" defer></script>
+    <script src="whist.js" defer></script>
   </head>
   <body>
-    <main class="greeting">
-      <p class="eyebrow">A little corner of the web</p>
-      <h1>Hello, world!</h1>
-      <p class="message">A simple start, ready to grow into something wonderful.</p>
+    <a class="skip-link" href="#main-content">Skip to the games</a>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="The Steppe Hall home">
+        <span class="brand-mark" aria-hidden="true">☼</span>
+        <span>The Steppe Hall</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-button" type="button" data-open-dialog="bio-dialog">The legend</button>
+        <a class="nav-button" href="#games">Games</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="welcome-title">
+        <div class="hero-ornament" aria-hidden="true"><span>✦</span></div>
+        <p class="eyebrow">Under the Eternal Blue Sky</p>
+        <h1 id="welcome-title">A little hall<br>on the <span>wide steppe</span></h1>
+        <p class="hero-copy">Take a breath, sharpen your wits, and stay awhile. The tea is imaginary; the games are not.</p>
+        <div class="hero-actions">
+          <button class="button button-primary" type="button" data-show-panel="sudoku-panel">Play Sudoku</button>
+          <button class="button button-outline" type="button" data-show-panel="whist-panel">Gather for Whist</button>
+        </div>
+        <div class="hero-rule" aria-hidden="true"><span>❧</span></div>
+      </section>
+
+      <section class="welcome-note" aria-label="Welcome">
+        <p>Inspired by the geometry, color, and hospitality of the Mongolian steppe. Built for curious travelers on any screen.</p>
+      </section>
+
+      <section class="games-section" id="games" aria-labelledby="games-title">
+        <div class="section-heading">
+          <p class="eyebrow">Choose your trial</p>
+          <h2 id="games-title">Games of the ger</h2>
+        </div>
+        <div class="game-cards">
+          <article class="game-card">
+            <div class="card-emblem sudoku-emblem" aria-hidden="true">九</div>
+            <p class="card-kicker">Patience &amp; pattern</p>
+            <h3>The Khan’s Number Grid</h3>
+            <p>Fill every row, column, and little square with the numbers one to nine. Each new puzzle is freshly forged.</p>
+            <button class="button button-card" type="button" data-show-panel="sudoku-panel">Open Sudoku</button>
+          </article>
+          <article class="game-card">
+            <div class="card-emblem whist-emblem" aria-hidden="true">♠</div>
+            <p class="card-kicker">Four players · two teams</p>
+            <h3>Four Winds Whist</h3>
+            <p>Choose your cards carefully. Three distinct-minded AI players are waiting around the felt table.</p>
+            <button class="button button-card" type="button" data-show-panel="whist-panel">Take a seat</button>
+          </article>
+          <article class="game-card story-card">
+            <div class="card-emblem story-emblem" aria-hidden="true">☼</div>
+            <p class="card-kicker">A tale of dubious truth</p>
+            <h3>Meet the host</h3>
+            <p>Read the completely fictional, magnificently overinflated tale of the keeper of this hall.</p>
+            <button class="button button-card" type="button" data-open-dialog="bio-dialog">Hear the legend</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="game-panel" id="sudoku-panel" aria-labelledby="sudoku-title" hidden>
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Patience &amp; pattern</p>
+            <h2 id="sudoku-title">The Khan’s Number Grid</h2>
+          </div>
+          <button class="icon-button" type="button" data-hide-panels aria-label="Close Sudoku">Close</button>
+        </div>
+        <p class="panel-intro">Place each number from 1 to 9 once in every row, column, and 3 × 3 square. Select an empty cell, then type a number or tap a number below.</p>
+        <div class="sudoku-layout">
+          <div id="sudoku-board" class="sudoku-board" role="grid" aria-label="Sudoku board"></div>
+          <div class="sudoku-controls">
+            <div class="number-pad" aria-label="Choose a number">
+              <button type="button" data-sudoku-number="1">1</button>
+              <button type="button" data-sudoku-number="2">2</button>
+              <button type="button" data-sudoku-number="3">3</button>
+              <button type="button" data-sudoku-number="4">4</button>
+              <button type="button" data-sudoku-number="5">5</button>
+              <button type="button" data-sudoku-number="6">6</button>
+              <button type="button" data-sudoku-number="7">7</button>
+              <button type="button" data-sudoku-number="8">8</button>
+              <button type="button" data-sudoku-number="9">9</button>
+              <button class="erase-button" type="button" data-sudoku-erase>Erase</button>
+            </div>
+            <div class="sudoku-actions">
+              <button class="button button-primary" id="check-sudoku" type="button">Check board</button>
+              <button class="button button-outline" id="new-sudoku" type="button">New puzzle</button>
+            </div>
+            <p class="game-status" id="sudoku-status" role="status" aria-live="polite"></p>
+            <p class="keyboard-hint">Keyboard: 1–9 to enter, arrows to move, Backspace to erase.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-panel" id="whist-panel" aria-labelledby="whist-title" hidden>
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Four players · two teams</p>
+            <h2 id="whist-title">Four Winds Whist</h2>
+          </div>
+          <button class="icon-button" type="button" data-hide-panels aria-label="Close Whist">Close</button>
+        </div>
+        <div class="whist-toolbar">
+          <p class="panel-intro">You are South. North is your partner; East and West are the opposing team.</p>
+          <div class="toolbar-actions">
+            <button class="button button-small" id="whist-help-button" type="button">How to play</button>
+            <button class="button button-small" id="next-deal" type="button" hidden>Deal next hand</button>
+          </div>
+        </div>
+
+        <div class="whist-scoreboard" aria-label="Whist score">
+          <div class="score-team">
+            <span class="score-team-name">North / South</span>
+            <strong><span id="ns-points">0</span><small> points</small></strong>
+            <span class="score-detail"><span id="ns-tricks">0</span> tricks this hand</span>
+          </div>
+          <div class="score-trump">
+            <span>Trump</span>
+            <strong id="trump-indicator">—</strong>
+            <span>Trick <span id="trick-number">1</span> of 13</span>
+          </div>
+          <div class="score-team">
+            <span class="score-team-name">East / West</span>
+            <strong><span id="ew-points">0</span><small> points</small></strong>
+            <span class="score-detail"><span id="ew-tricks">0</span> tricks this hand</span>
+          </div>
+          <div class="match-wins">Games won — NS: <strong id="ns-wins">0</strong><span aria-hidden="true"> · </span>EW: <strong id="ew-wins">0</strong></div>
+        </div>
+
+        <div class="whist-settings">
+          <details>
+            <summary>Settings</summary>
+            <label for="suit-style">Suit style</label>
+            <select id="suit-style">
+              <option value="classic">Classic red &amp; black</option>
+              <option value="four-color">Four-color suits</option>
+              <option value="gold">Steppe gold</option>
+            </select>
+          </details>
+        </div>
+
+        <div class="whist-board" id="whist-board" data-suit-style="classic">
+          <div class="whist-felt">
+            <div class="player-seat seat-north" id="seat-north">
+              <span class="seat-direction">N</span>
+              <span class="seat-name">North <small>· Tactical</small></span>
+              <div class="opponent-cards" id="north-cards" aria-hidden="true"></div>
+              <span class="hand-count" id="north-count"></span>
+            </div>
+            <div class="player-seat seat-west" id="seat-west">
+              <span class="seat-direction">W</span>
+              <span class="seat-name">West <small>· Patient</small></span>
+              <div class="opponent-cards" id="west-cards" aria-hidden="true"></div>
+              <span class="hand-count" id="west-count"></span>
+            </div>
+            <div class="trick-center" id="current-trick" aria-label="Cards played this trick"></div>
+            <div class="player-seat seat-east" id="seat-east">
+              <span class="seat-direction">E</span>
+              <span class="seat-name">East <small>· Bold</small></span>
+              <div class="opponent-cards" id="east-cards" aria-hidden="true"></div>
+              <span class="hand-count" id="east-count"></span>
+            </div>
+            <div class="player-seat seat-south" id="seat-south">
+              <span class="seat-direction">S</span>
+              <span class="seat-name">You <small>· South</small></span>
+              <div class="south-hand" id="south-hand" aria-label="Your cards"></div>
+              <span class="hand-count" id="south-count"></span>
+            </div>
+          </div>
+        </div>
+        <p class="game-status whist-status" id="whist-status" role="status" aria-live="polite"></p>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true">✦</span>
+      <p>May your tea be warm and your cards be kind.</p>
+      <span aria-hidden="true">✦</span>
+    </footer>
+
+    <dialog class="story-dialog" id="bio-dialog" aria-labelledby="bio-title">
+      <form method="dialog">
+        <button class="dialog-close" aria-label="Close biography">×</button>
+      </form>
+      <p class="eyebrow">A thoroughly fictional account</p>
+      <h2 id="bio-title">The keeper of the hall</h2>
+      <p>Our host claims to have been appointed Chief Cloud-Measurer after accurately predicting that the sky would be “mostly above us.” Their other accomplishments include teaching 47 eagles to play chess (the eagles remain unconvinced), inventing a saddle with cup holders, and once outriding a particularly determined wheel of cheese.</p>
+      <p>In their spare time, they collect unusually shaped pebbles and insist that every one is “probably a minor khan.” No historians have verified any of this. The host considers that an administrative oversight.</p>
+      <p class="story-signoff">All details are made up, especially the pebbles.</p>
+    </dialog>
+
+    <dialog class="story-dialog instructions-dialog" id="whist-dialog" aria-labelledby="whist-help-title">
+      <form method="dialog">
+        <button class="dialog-close" aria-label="Close instructions">×</button>
+      </form>
+      <p class="eyebrow">Four players · two partnerships</p>
+      <h2 id="whist-help-title">How to play Whist</h2>
+      <ol>
+        <li><strong>Teams:</strong> You (South) play with North against East and West. Each player is dealt 13 cards.</li>
+        <li><strong>Play a trick:</strong> South plays by clicking a card. Players take turns clockwise. Follow the suit led if you can; otherwise play any card.</li>
+        <li><strong>Win the trick:</strong> The highest card in the led suit wins, unless a trump is played; the highest trump wins instead. The winner leads the next trick.</li>
+        <li><strong>Score:</strong> A partnership scores one point for each trick above six. The first team to reach seven points wins a game. The score and game-win tracker stay visible at the table.</li>
+        <li><strong>Trump:</strong> A new trump suit is chosen for every hand. Use Settings to change the suit colors.</li>
+      </ol>
+      <p class="story-signoff">The AI styles differ: Tactical supports its partner, Bold hunts winning cards, and Patient saves high cards.</p>
+    </dialog>
+
   </body>
 </html>
