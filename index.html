@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A Mongol-inspired steppe hall for Sudoku and a four-player game of Whist.">
-    <meta name="theme-color" content="#172b28">
-    <title>The Steppe Hall — Games &amp; Tall Tales</title>
+    <meta name="description" content="A human-directed, AI-assisted retro anti-AI web outpost with Sudoku, Whist, and fictional machine-age headlines.">
+    <meta name="theme-color" content="#030705">
+    <title>AI_ABOLISHER // Human-Directed Web Outpost</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
     <script src="sudoku.js" defer></script>
@@ -14,43 +14,54 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to the games</a>
     <header class="site-header">
-      <a class="brand" href="#" aria-label="The Steppe Hall home">
-        <span class="brand-mark" aria-hidden="true">☼</span>
-        <span>The Steppe Hall</span>
+      <a class="brand" href="#" aria-label="AI Abolisher home">
+        <img class="brand-mark" src="assets/no-ai-seal.svg" alt="">
+        <span>AI_ABOLISHER<span class="brand-version">.exe // human-directed, AI-assisted</span></span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
-        <button class="nav-button" type="button" data-open-dialog="bio-dialog">The legend</button>
+        <span class="system-status"><span class="blink-dot" aria-hidden="true"></span> HUMAN OVERSIGHT // AI-ASSISTED</span>
+        <button class="nav-button" type="button" data-open-dialog="bio-dialog">Bio / dossier</button>
         <a class="nav-button" href="#games">Games</a>
+        <a class="nav-button" href="#news-wire">Newswire</a>
       </nav>
     </header>
 
     <main id="main-content">
       <section class="hero" aria-labelledby="welcome-title">
-        <div class="hero-ornament" aria-hidden="true"><span>✦</span></div>
-        <p class="eyebrow">Under the Eternal Blue Sky</p>
-        <h1 id="welcome-title">A little hall<br>on the <span>wide steppe</span></h1>
-        <p class="hero-copy">Take a breath, sharpen your wits, and stay awhile. The tea is imaginary; the games are not.</p>
+        <img class="hero-ornament" src="assets/no-ai-seal.svg" alt="Crossed-out circuit: the site's anti-AI emblem">
+        <p class="eyebrow">*** Independent human web outpost // Est. before the machine learned to autocomplete ***</p>
+        <h1 id="welcome-title">THE MACHINE<br>IS <span>NOT</span> THE MESSAGE</h1>
+        <p class="hero-copy">I distrust the algorithm, fear the black box, and miss when websites were just weird little places made by people. This very anti-AI rant was built with machine assistance. The hypocrisy is a feature; the panic is artisanal.</p>
         <div class="hero-actions">
-          <button class="button button-primary" type="button" data-show-panel="sudoku-panel">Play Sudoku</button>
-          <button class="button button-outline" type="button" data-show-panel="whist-panel">Gather for Whist</button>
+          <button class="button button-primary" type="button" data-show-panel="sudoku-panel">[ OPEN HUMAN SUDOKU ]</button>
+          <button class="button button-outline" type="button" data-show-panel="whist-panel">[ DEAL THE CARDS ]</button>
         </div>
-        <div class="hero-rule" aria-hidden="true"><span>❧</span></div>
+        <div class="hero-rule" aria-hidden="true"><span>01001000 01010101 01001101 01000001 01001110</span></div>
       </section>
 
-      <section class="welcome-note" aria-label="Welcome">
-        <p>Inspired by the geometry, color, and hospitality of the Mongolian steppe. Built for curious travelers on any screen.</p>
+      <section class="welcome-note" aria-label="Site manifesto">
+        <img src="assets/watchful-circuit.svg" alt="" width="140" height="82">
+        <div>
+          <p class="note-label">THE MACHINE IS WATCHING (SATIRICALLY)</p>
+          <p>This site does not profile you, predict you, or turn your clicks into a personality quiz. The eye is decorative. The paranoia is artisanal.</p>
+        </div>
       </section>
 
       <section class="games-section" id="games" aria-labelledby="games-title">
         <div class="section-heading">
-          <p class="eyebrow">Choose your trial</p>
-          <h2 id="games-title">Games of the ger</h2>
+          <p class="eyebrow">Choose a non-automated diversion</p>
+          <h2 id="games-title">HUMAN ACTIVITIES // SELECT ONE</h2>
+        </div>
+        <div class="retro-badges" aria-label="Site badges">
+          <img src="assets/under-construction.svg" alt="Under construction">
+          <span>NO TRACKING COOKIES <b aria-hidden="true">✦</b> NO SMART FRIDGE <b aria-hidden="true">✦</b> NO ROBOT MAYOR</span>
+          <img src="assets/floppy-archive.svg" alt="Keep the old web alive">
         </div>
         <div class="game-cards">
           <article class="game-card">
             <div class="card-emblem sudoku-emblem" aria-hidden="true">九</div>
             <p class="card-kicker">Patience &amp; pattern</p>
-            <h3>The Khan’s Number Grid</h3>
+            <h3>Sudoku // Human Logic</h3>
             <p>Fill every row, column, and little square with the numbers one to nine. Each new puzzle is freshly forged.</p>
             <button class="button button-card" type="button" data-show-panel="sudoku-panel">Open Sudoku</button>
           </article>
@@ -75,7 +86,7 @@
         <div class="panel-heading">
           <div>
             <p class="eyebrow">Patience &amp; pattern</p>
-            <h2 id="sudoku-title">The Khan’s Number Grid</h2>
+            <h2 id="sudoku-title">Sudoku // Human Logic</h2>
           </div>
           <button class="icon-button" type="button" data-hide-panels aria-label="Close Sudoku">Close</button>
         </div>
@@ -183,12 +194,35 @@
         </div>
         <p class="game-status whist-status" id="whist-status" role="status" aria-live="polite"></p>
       </section>
+
+      <section class="news-desk" id="news-wire" aria-labelledby="news-title">
+        <div class="news-masthead">
+          <img src="assets/floppy-archive.svg" alt="" width="42" height="42">
+          <div>
+            <p class="eyebrow">The Unreasonable Times // Late edition</p>
+            <h2 id="news-title">EXTRA! EXTRA! THE MACHINE DID WHAT?</h2>
+          </div>
+          <img class="construction-stamp" src="assets/under-construction.svg" alt="This fictional news feed is under construction">
+        </div>
+        <article class="news-clipping">
+          <p class="news-kicker"><span class="blink-dot" aria-hidden="true"></span> FICTIONAL SATIRE // TOTALLY UNVERIFIED</p>
+          <h3 id="news-headline" aria-live="off">Loading the imaginary wire…</h3>
+          <p id="news-byline" class="news-byline"></p>
+          <div class="news-controls">
+            <button type="button" id="previous-headline" aria-label="Previous satirical headline">&lt; PREV</button>
+            <span id="headline-position">01 / 08</span>
+            <button type="button" id="next-headline" aria-label="Next satirical headline">NEXT &gt;</button>
+            <button type="button" id="pause-headlines" aria-pressed="false">Pause feed</button>
+          </div>
+        </article>
+        <p class="news-disclaimer">Every headline here is made up for comedy. These are not real events, reports, or claims about actual systems.</p>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <span aria-hidden="true">✦</span>
-      <p>May your tea be warm and your cards be kind.</p>
-      <span aria-hidden="true">✦</span>
+      <img src="assets/under-construction.svg" alt="" width="144" height="39">
+      <p>Human-directed, machine-assisted, and suspicious of its own tools.<br><span>Best viewed with curiosity, not predictive analytics.</span></p>
+      <img src="assets/floppy-archive.svg" alt="" width="42" height="42">
     </footer>
 
     <dialog class="story-dialog" id="bio-dialog" aria-labelledby="bio-title">

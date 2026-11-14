@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96" viewBox="0 0 360 96">
+  <rect x="2" y="2" width="356" height="92" rx="4" fill="#10140d" stroke="#ffe06d" stroke-width="4"/>
+  <path d="M10 10h14L10 24zm0 22 30-30h14L10 46zm0 22L64 10h14L10 78zm0 22L88 10h14l-78 78zm38 0 68-68h14L62 88zm38 0 68-68h14L100 88zm38 0 68-68h14l-68 68zm38 0 68-68h14l-68 68zm38 0 68-68h14l-68 68zm38 0 50-50v14l-36 36z" fill="#ffe06d" opacity=".45"/>
+  <path d="M10 10h340v76H10z" fill="#10140d" opacity=".9"/>
+  <path d="m38 67 22-40 22 40z" fill="#ffe06d" stroke="#f59b36" stroke-width="3"/>
+  <path d="M60 39v14" stroke="#10140d" stroke-linecap="round" stroke-width="5"/>
+  <circle cx="60" cy="60" r="2.5" fill="#10140d"/>
+  <text x="96" y="49" fill="#ffe06d" font-family="monospace" font-size="16" font-weight="700">UNDER</text>
+  <text x="96" y="71" fill="#ffe06d" font-family="monospace" font-size="16" font-weight="700">CONSTRUCTION</text>
+</svg>

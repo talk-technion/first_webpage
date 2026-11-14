@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#1b5b39" stroke-width="1" opacity=".28"/>
+      <circle cx="2" cy="2" r="1.5" fill="#61ff91" opacity=".22"/>
+    </pattern>
+    <pattern id="scanlines" width="4" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0 7.5H4" stroke="#73ff9d" stroke-width=".5" opacity=".08"/>
+    </pattern>
+    <radialGradient id="glow">
+      <stop stop-color="#104126" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#020603" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="#030705"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <ellipse cx="800" cy="340" rx="720" ry="540" fill="url(#glow)"/>
+  <g fill="none" stroke="#36d56e" opacity=".17">
+    <path d="M-40 730H310l80-80h220l60-60h190l80-80h245l70-70h385" stroke-width="3"/>
+    <path d="M120 0v165l90 90v150l65 65v175l130 130v225" stroke-width="2"/>
+    <path d="M1480 0v210l-95 95v150l-110 110v220l-115 115v100" stroke-width="2"/>
+    <circle cx="800" cy="410" r="245" stroke-width="1"/>
+    <circle cx="800" cy="410" r="300" stroke-width="1" stroke-dasharray="3 11"/>
+    <path d="M800 75v80m0 510v80M465 410h80m510 0h80" stroke-width="2"/>
+  </g>
+  <g fill="#79ff9e" opacity=".2">
+    <rect x="252" y="188" width="7" height="7"/>
+    <rect x="1284" y="570" width="9" height="9"/>
+    <rect x="1092" y="151" width="5" height="5"/>
+    <rect x="438" y="836" width="8" height="8"/>
+    <rect x="1380" y="876" width="6" height="6"/>
+    <rect x="686" y="123" width="6" height="6"/>
+  </g>
+  <rect width="1600" height="1000" fill="url(#scanlines)"/>
+</svg>
